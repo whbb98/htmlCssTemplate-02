@@ -1,6 +1,6 @@
 /* global variables */
 :root {
-  --primary-color: #00c7fc;
+  --primary-color: rgb(0, 199, 252);
   --secondary-color: #1f2021;
   --primary-text-color: #fff;
   --secondary-text-color: #636364;
@@ -21,6 +21,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  /* overflow: hidden; */
   font-family: "Open Sans", sans-serif;
 }
 ul {
@@ -80,7 +81,6 @@ header::after {
   content: "";
   width: 100%;
   height: 100%;
-  /* background-color: rgb(0 0 0 / 60%); */
   background-color: rgba(0, 0, 0, 0.7);
   top: 0;
 }
@@ -104,14 +104,14 @@ header .container::before {
   bottom: 0;
 }
 header .container .logo {
-  width: 100px;
+  width: 15%;
 }
 header .container .logo img {
-  width: 100%;
+  max-width: fit-content;
 }
 header .container nav {
   position: relative;
-  width: calc(100% - 100px);
+  width: 80%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -167,11 +167,14 @@ header .container nav form i {
 }
 @media (max-width: 767px) {
   header {
-    height: calc(100vh + 150px);
+    /* height: calc(100vh + 150px); */
     /* overflow: auto; */
   }
   header .container .logo {
-    margin: 10px auto;
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
   }
   header .container nav {
     width: 100%;
@@ -185,10 +188,11 @@ header .container nav form i {
     flex-flow: column;
   }
   header .container nav ul {
+    background-color: var(--secondary-color);
     display: none;
     position: absolute;
     top: 100%;
-    width: 100%;
+    width: calc(100% - 20px);
   }
   header .container nav form {
     display: none;
@@ -199,4 +203,89 @@ header .container nav form i {
     display: none;
   }
 }
+
+/* start styling landing text, slide(icons, bullets) */
+header .landing-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  z-index: 1;
+  color: var(--primary-text-color);
+  width: 70%;
+  height: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 199, 252, 0.5);
+  padding: 20px;
+}
+header .landing-text h1 {
+  font-weight: normal;
+  text-transform: uppercase;
+  width: 60%;
+}
+header .landing-text p {
+  width: 60%;
+  text-transform: capitalize;
+  line-height: 1.5em;
+}
+header .slide-icons {
+  font-size: 1.5em;
+}
+header .slide-icons .right-icon,
+header .slide-icons .left-icon {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  color: var(--primary-text-color);
+  top: 50%;
+  transform: translateY(-50%);
+}
+header .slide-icons .right-icon {
+  right: 30px;
+}
+header .slide-icons .left-icon {
+  left: 30px;
+}
+header ul.slide-bullets {
+  width: calc(15px * 3 + 10px);
+  position: absolute;
+  z-index: 1;
+  color: var(--primary-text-color);
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+header ul.slide-bullets li {
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--primary-text-color);
+  border-radius: 50%;
+}
+header ul.slide-bullets li.active {
+  background-color: var(--primary-color);
+}
+@media (max-width: 767px) {
+  header .container {
+    z-index: 2;
+    width: 100%;
+  }
+  header .landing-text {
+    width: 100%;
+    align-items: center;
+  }
+  header .landing-text h1 {
+    width: 80%;
+  }
+  header .landing-text p {
+    width: 80%;
+  }
+}
+/* end styling landing text, slide(icons, bullets) */
 /* end styling header */
+
+/* start styling services section */
+/* end styling services section */
