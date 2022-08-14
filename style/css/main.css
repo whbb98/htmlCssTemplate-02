@@ -214,9 +214,8 @@ header .container nav form i {
   cursor: pointer;
 }
 @media (max-width: 767px) {
-  header {
-    /* height: calc(100vh + 150px); */
-    /* overflow: auto; */
+  header .slide-container .slide-icons {
+    display: none;
   }
   header .container .logo {
     width: 100%;
@@ -270,7 +269,7 @@ header .landing-text {
 }
 header .landing-text h1 {
   font-weight: lighter;
-  text-transform: uppercase;
+  text-transform: capitalize;
   width: 60%;
 }
 header .landing-text p {
@@ -459,3 +458,322 @@ header ul.slide-bullets li.active {
   }
 }
 /* end styling services section */
+
+/* start styling portfolio section */
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio ul.category {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.portfolio ul.category li {
+  text-transform: uppercase;
+  padding: 10px;
+}
+.portfolio ul.category li.active,
+.portfolio ul.category li:hover {
+  cursor: pointer;
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+}
+.portfolio .gallery {
+  overflow: hidden;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.portfolio .gallery .card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.portfolio .gallery .card:hover {
+  cursor: pointer;
+  transition: 0.3s;
+  transform: rotate(2deg) scale(1.1, 1.1);
+}
+.portfolio .gallery .card:hover > .text {
+  transition: 0.3s;
+  bottom: 0;
+}
+.portfolio .gallery .card .picture {
+  width: 90%;
+  height: 200px;
+}
+.portfolio .gallery .card .picture img {
+  width: 100%;
+  height: 100%;
+}
+.portfolio .gallery .card .text {
+  position: relative;
+  bottom: -100%;
+  width: 90%;
+  padding: 10px;
+}
+.portfolio .gallery .card .text h3 {
+  color: var(--secondary-color);
+}
+.portfolio .gallery .card .text p {
+  color: var(--primary-color);
+}
+.portfolio > a {
+  margin-top: 20px;
+  text-transform: uppercase;
+  display: block;
+  padding: 10px 40px;
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+}
+
+/* start styling landing video */
+
+.portfolio .landing-video {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--secondary-color);
+  margin-top: 100px;
+  width: 100%;
+  height: 60vh;
+}
+.portfolio .landing-video video {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+}
+.portfolio .landing-video .landing-text {
+  background-color: rgba(0, 199, 252, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 50%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.portfolio .landing-video .landing-text h3 {
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+  font-weight: lighter;
+}
+.portfolio .landing-video .landing-text p {
+  color: var(--primary-text-color);
+}
+.portfolio .landing-video .landing-text a {
+  text-transform: uppercase;
+  display: block;
+  padding: 10px 40px;
+  background-color: var(--secondary-color);
+  color: var(--primary-text-color);
+}
+/* end styling landing video */
+/* end styling portfolio section */
+
+/* start styling "about us" section */
+.aboutus {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.aboutus .picture {
+  width: 50%;
+}
+.aboutus .picture img {
+  width: 100%;
+}
+.aboutus .achievements {
+  position: relative;
+  background-color: var(--secondary-color);
+  background-image: url("../img/about-bg-01.jpg");
+  background-size: cover;
+  width: 100%;
+}
+.aboutus .achievements::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.aboutus .achievements .cards {
+  position: relative;
+  z-index: 1;
+  padding: 10px;
+  margin: auto;
+  width: 60%;
+  height: 200px;
+  display: flex;
+  color: var(--primary-text-color);
+  justify-content: space-between;
+  background-color: rgb(0, 199, 252, 0.5);
+}
+@media (max-width: 767px) {
+  .aboutus .achievements .cards {
+    flex-direction: column;
+    height: auto;
+    padding-top: 40px;
+  }
+  .aboutus .achievements .cards .card {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 991px) {
+  .aboutus .achievements .cards {
+    width: 80%;
+  }
+}
+.aboutus .achievements .cards .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.aboutus .achievements .cards .card i {
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.5em;
+  background-color: var(--secondary-color);
+}
+.aboutus .achievements .cards .card span {
+  font-size: 2em;
+  font-weight: bolder;
+}
+.aboutus .achievements .cards .card p {
+}
+.aboutus .reviews {
+  margin-top: var(--section-padding);
+  width: 100%;
+}
+.aboutus .reviews .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media (max-width: 767px) {
+  .aboutus .reviews .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.aboutus .reviews .container .heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.aboutus .reviews .container .heading h3 {
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+.aboutus .reviews .container .heading p {
+  width: 80%;
+  margin: auto;
+}
+.aboutus .reviews .container .testimonials {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+.aboutus .testimonials .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.aboutus .testimonials .card .picture {
+  width: 20%;
+}
+.aboutus .testimonials .card .picture img {
+  border-radius: 50%;
+  width: 100%;
+}
+.aboutus .testimonials .card .text {
+  width: 70%;
+}
+.aboutus .testimonials .card .text p {
+}
+.aboutus .testimonials .card .text span {
+  display: block;
+  text-align: right;
+}
+.aboutus .testimonials ul.bars {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.aboutus .testimonials ul.bars li {
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 50%;
+  margin-left: 5px;
+}
+.aboutus .testimonials ul.bars li.active {
+  background-color: var(--primary-color);
+}
+
+/* ++++++++++++++++++++++++++ */
+
+.aboutus .skills {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+.aboutus .skills .prog-bars {
+}
+.aboutus .skills .prog-bars > div {
+  width: 100%;
+  background-color: #dedadc;
+  margin-bottom: 30px;
+}
+.aboutus .skills .prog-bars > div span {
+  display: block;
+  padding: 20px;
+  width: 70%;
+  background-color: var(--primary-color);
+}
+/* +++++++++++++++++++++++++++++++ */
+
+.aboutus .quote {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: var(--secondary-color);
+  background-image: url(../img/about-bg-02.jpg);
+  color: var(--primary-text-color);
+  text-align: center;
+  margin-top: 100px;
+}
+.aboutus .quote .container {
+  width: 60%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.aboutus .quote .container q {
+  font-size: 1.3em;
+  line-height: 1.2em;
+}
+.aboutus .quote .container span {
+  text-transform: capitalize;
+  margin-top: 10px;
+  display: block;
+}
+/* end styling "about us" section */
