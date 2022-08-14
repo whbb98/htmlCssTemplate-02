@@ -10,6 +10,55 @@
   --primary-margin: 10px;
 }
 /* -------------- */
+
+/* start my css components */
+
+/*start styling section heading component */
+.section-heading {
+  text-align: center;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.section-heading .container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.section-heading h2 {
+  text-transform: uppercase;
+  position: relative;
+  font-weight: lighter;
+  font-size: 2.5em;
+}
+.section-heading span {
+  display: block;
+  position: relative;
+  margin: 20px auto;
+  width: 100px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+.section-heading span::after {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-text-color);
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  content: "";
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+}
+
+.section-heading p {
+  width: 50%;
+  line-height: 1.5em;
+}
+/*end styling section heading component */
+
+/* end my css components */
+
 /* global rules  */
 * {
   padding: 0;
@@ -21,7 +70,6 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  /* overflow: hidden; */
   font-family: "Open Sans", sans-serif;
 }
 ul {
@@ -221,7 +269,7 @@ header .landing-text {
   padding: 20px;
 }
 header .landing-text h1 {
-  font-weight: normal;
+  font-weight: lighter;
   text-transform: uppercase;
   width: 60%;
 }
@@ -288,4 +336,126 @@ header ul.slide-bullets li.active {
 /* end styling header */
 
 /* start styling services section */
+
+.services {
+}
+.services .container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+.services .container .srv {
+  margin-bottom: 50px;
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+}
+.services .container .srv i {
+  color: var(--secondary-color);
+  font-size: 3em;
+}
+.services .container .srv .text {
+  width: 80%;
+}
+.services .container .srv .text h3 {
+  color: var(--primary-color);
+  font-weight: lighter;
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+.services .container .srv .text p {
+  color: var(--secondary-text-color);
+  line-height: 1.5em;
+}
+@media (max-width: 767px) {
+  .services .container {
+    flex-direction: column;
+  }
+  .services .container .srv {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .services .container .srv .text {
+    margin-top: 20px;
+  }
+}
+
+.services .landing {
+  background-color: var(--secondary-color);
+  background-image: url("../img/services-bg.jpg");
+  background-size: cover;
+  color: white;
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+.services .landing::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.services .landing .landing-img {
+  z-index: 1;
+  position: absolute;
+  bottom: -50px;
+  left: 20%;
+  width: 200px;
+}
+.services .landing .landing-img img {
+  width: 100%;
+}
+.services .landing .landing-text {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 199, 252, 0.5);
+  width: 50%;
+  padding: 40px 10px 10px 50px;
+  z-index: 1;
+}
+.services .landing .landing-text h3 {
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  font-weight: lighter;
+}
+.services .landing .landing-text ul {
+}
+.services .landing .landing-text ul li {
+  padding: 10px;
+  position: relative;
+}
+.services .landing .landing-text ul li::before {
+  position: relative;
+  margin-right: 10px;
+  font-family: "Font Awesome 5 Free";
+  content: "\f108";
+  font-weight: 900;
+}
+
+@media (max-width: 767px) {
+  .services .landing {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .services .landing .landing-img {
+    position: static;
+  }
+  .services .landing .landing-text {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+}
 /* end styling services section */
