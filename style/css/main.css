@@ -706,8 +706,11 @@ header ul.slide-bullets li.active {
 }
 .aboutus .testimonials .card .text {
   width: 70%;
+  border-bottom: 1px solid var(--secondary-text-color);
+  padding-bottom: 10px;
 }
 .aboutus .testimonials .card .text p {
+  margin-bottom: 10px;
 }
 .aboutus .testimonials .card .text span {
   display: block;
@@ -738,6 +741,10 @@ header ul.slide-bullets li.active {
 }
 .aboutus .skills .prog-bars {
 }
+.aboutus .skills .prog-bars h4{
+  text-transform: uppercase;
+  font-weight: lighter;
+}
 .aboutus .skills .prog-bars > div {
   width: 100%;
   background-color: #dedadc;
@@ -746,11 +753,38 @@ header ul.slide-bullets li.active {
 .aboutus .skills .prog-bars > div span {
   display: block;
   padding: 20px;
-  width: 70%;
   background-color: var(--primary-color);
+  position: relative;
+}
+.aboutus .skills .prog-bars > div span::before{
+  position: absolute;
+  content: attr(data-value);
+  top: -37px;
+  right: -18px;
+  background-color: var(--secondary-color);
+  color: var(--primary-text-color);
+  padding: 5px 10px;
+}
+.aboutus .skills .prog-bars > div span::after{
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: var(--secondary-color) transparent transparent transparent;
 }
 /* +++++++++++++++++++++++++++++++ */
-
+@media(max-width:767px){
+  .aboutus .reviews .container .testimonials,
+  .aboutus .reviews .container .skills{
+    width: 100%;
+  }
+  .aboutus .reviews .container .skills{
+    margin-top: 50px;
+  }
+}
+/* +++++++++++++++++++++++++++++++ */
 .aboutus .quote {
   position: relative;
   width: 100%;
