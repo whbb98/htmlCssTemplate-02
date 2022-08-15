@@ -260,12 +260,12 @@ header .landing-text {
   position: absolute;
   z-index: 1;
   color: var(--primary-text-color);
-  width: 70%;
+  width: 80%;
   height: 50%;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
-  background-color: rgba(0, 199, 252, 0.5);
-  padding: 20px;
+  background-color: rgba(19, 185, 231, 0.5);
+  padding: 10px;
 }
 header .landing-text h1 {
   font-weight: lighter;
