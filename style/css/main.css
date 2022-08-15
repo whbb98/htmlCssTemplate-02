@@ -643,6 +643,9 @@ header ul.slide-bullets li.active {
   .aboutus .achievements .cards {
     width: 80%;
   }
+  .aboutus .achievements .cards .card{
+    height: 150px;
+  }
 }
 .aboutus .achievements .cards .card {
   display: flex;
