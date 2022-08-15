@@ -315,6 +315,12 @@ header ul.slide-bullets li {
 header ul.slide-bullets li.active {
   background-color: var(--primary-color);
 }
+@media (max-width: 991px) {
+  header .landing-text p,
+  header .landing-text h1{
+    width: 70%;
+  }
+}
 @media (max-width: 767px) {
   header .container {
     z-index: 2;
@@ -1074,7 +1080,7 @@ footer {
   background-size: cover;
   padding: 100px 0;
 }
-footer::before{
+footer::before {
   position: absolute;
   content: "";
   top: 0;
