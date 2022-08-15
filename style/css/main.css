@@ -742,6 +742,7 @@ header ul.slide-bullets li.active {
 .aboutus .skills .prog-bars {
 }
 .aboutus .skills .prog-bars h4 {
+  margin-bottom: 10px;
   text-transform: uppercase;
   font-weight: lighter;
 }
